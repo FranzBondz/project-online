@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="volt.css">
+        <title>Multimeter | PhysicsNova</title>
+        <link href="https://fonts.googleapis.com/css?family=Raleway&amp;display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <h1 id="title">MULTIMETER</h1>
+
+        <!--<div class="container">
+            <div class="multimeter">
+                <div class="display"></div>
+                <div class="options">
+                    <div class="selector"></div>
+                </div>
+            </div>
+        </div>-->
+        <div style="text-align: center;">
+        <svg width="1800" height="800" id="svg" style="margin-top: 10px;margin-left:40px;" >
+
+            
+
+
+            <g transform="translate(1000 100)">
+            <rect width="400" height="600" rx="30" ry="30" style="fill:var(--bg);stroke:black;"   />
+            <rect x="20" y="40" width="360" height="100" rx="20" ry="20" style="stroke:black;fill:white"/>
+            <text x="50" y="120" fill="black" font-size="90px" style="display:none" id="display">0.00</text>
+            <!--<path d="M20 180 v 150 a20,20 0 0 0 20,20 h320 a20,20 0 0 0 20,-20 v-150 a20,20 0 0 0 -20,-20 h-320 a20,20 0 0 0 -20,20 Z" style="stroke:black;fill:white"/>-->
+            <path d="M20 180 v 120 a20,20 0 0 0 20,20 a100,-40 0 0 0 140,-20 v-120 a20,20 0 0 0 -20,-20 h-120 a20,20 0 0 0 -20,20 Z" style="stroke:black;fill:white"/>
+            <path d="M190 170 v 150 a10,10 0 0 0 10,10 a10,10 0 0 0 10,-10 v-150 a10,10 0 0 0 -10,-10 a10,10 0 0 0 -10,10 Z" style="stroke: black;fill:white"/>
+            <path d="M220 180 v80 a100,-40 0 0 1 140,-20 a20,20 0 0 0 20,-20 v-40 a20,20 0 0 0 -20,-20 h-120 a20,20 0 0 0 -20,20Z" style="stroke:black;fill:white"/>
+            <path d="M240 280 a80,-40 0 0 1 120,-20 a20,20 0 0 1 20,20 v180 a20,20 0 0 1 -20,20 h-100 a20,20 0 0 1 -20, -20 Z" style="fill:white;stroke:black;"/>
+            <path d="M20 365 v90 a20,20 0 0 0 20,20 h110 a20,20 0 0 0 20,-20 v-130 a100,-40 0 0 1 -130,20 a20,20 0 0 0 -20,20 Z" style="fill:white;stroke:black"/>
+
+
+            <line x1="200" y1="190" x2="200" y2="300" style="stroke:black"/>
+            <line x1="241" y1="199" x2="200" y2="300" style="stroke:black"/>
+            <line x1="274" y1="223" x2="200" y2="300" style="stroke:black"/>
+            <line x1="305" y1="270" x2="200" y2="300" style="stroke:black"/>
+            <line x1="307" y1="305" x2="200" y2="300" style="stroke:black"/>
+            <line x1="302" y1="340" x2="200" y2="300" style="stroke:black"/>
+            <line x1="287" y1="370" x2="200" y2="300" style="stroke:black"/>
+            <line x1="260" y1="395" x2="200" y2="300" style="stroke:black"/>
+            
+
+            <line x1="150" y1="400" x2="200" y2="300" style="stroke:black"/>
+            <line x1="125" y1="390" x2="200" y2="300" style="stroke:black"/>
+            <line x1="110" y1="370" x2="200" y2="300" style="stroke:black"/>
+            <line x1="90" y1="300" x2="200" y2="300" style="stroke:black"/>
+            <line x1="95" y1="270" x2="200" y2="300" style="stroke:black"/>
+            <line x1="110" y1="240" x2="200" y2="300" style="stroke:black"/>
+            <line x1="135" y1="215" x2="200" y2="300" style="stroke:black"/>
+
+            <!--Texts-->
+                <!--AC-->
+            <text x="230" y="197" fill="black" style="cursor:pointer" onclick="turnAngle(22, 'AC', 600)" font-size="20px">600</text>
+            <text x="265" y="220" fill="black" style="cursor:pointer" onclick="turnAngle(43, 'AC', 200)" font-size="20px">200</text>
+                <!--Ohm-->
+            <text x="306" y="273" fill="black" style="cursor:pointer" onclick="turnAngle(74, 'OHM', '2M')" font-size="20px">2M</text>
+            <text x="309" y="310" fill="black" style="cursor:pointer" onclick="turnAngle(-267, 'OHM', '200k')" font-size="20px">200k</text>
+            <text x="307" y="345" fill="black" style="cursor:pointer" onclick="turnAngle(-249, 'OHM', '20k')" font-size="20px">20k</text>
+            <text x="290" y="378" fill="black" style="cursor:pointer" onclick="turnAngle(-232, 'OHM', '2k')" font-size="20px">2k</text>
+            <text x="260" y="410" fill="black" style="cursor:pointer" onclick="turnAngle(-212, 'OHM', '200')" font-size="20px">200</text>
+                <!--Amperometro-->
+            <text x="115" y="415" fill="blue" style="cursor:pointer" onclick="turnAngle(-154, 'AMP', 200)" font-size="20px">200m</text>
+            <text x="87" y="400" fill="blue" style="cursor:pointer" onclick="turnAngle(-140, 'AMP', 20)" font-size="20px">20m</text>
+            <text x="70" y="420" fill="red" style="cursor:pointer" onclick="turnAngle(-140, 'AMP', 20)" font-size="20px">10A</text>
+            <text x="82" y="378" fill="blue" style="cursor:pointer" onclick="turnAngle(-127, 'AMP', 2)" font-size="20px">2m</text>
+                <!--DC-->
+            <text x="77" y="307" fill="black" style="cursor:pointer" onclick="turnAngle(-90,'DC', 2)" font-size="20px">2</text>
+            <text x="72" y="275" fill="black" style="cursor:pointer" onclick="turnAngle(-73, 'DC', 20)" font-size="20px">20</text>
+            <text x="72" y="242" fill="black" style="cursor:pointer" onclick="turnAngle(-55, 'DC', 200)" font-size="20px">200</text>
+            <text x="100" y="210" fill="black" style="cursor:pointer" onclick="turnAngle(-37, 'DC', 600)" font-size="20px">600</text>
+                <!--0-->
+            <text x="193.5" y="187" fill="black" style="cursor:pointer" onclick="turnAngle(0)" font-size="20px">0</text>
+
+            <text x="30" y="195" fill="black" font-size="28px" style="font-weight:900">V(DC)</text>
+            <text x="290" y="195" fill="black" font-size="28px" style="font-weight:900">V(AC)</text>
+            <text x="30" y="450" fill="black" font-size="28px" style="font-weight:900">A</text>
+            <text x="340" y="450" fill="black" font-size="28px" style="font-weight:700">Ω</text>
+
+            <circle cx="200" cy="300" r="100" style="fill: white;stroke:black" /> <circle cx="200" cy="300" r="95" style="fill: white;stroke:black" id="selector"/>
+            <g id="l" style="cursor:pointer;">
+                <path d="M190 300 v -85 a10,15 0 0 1 10,-15 a10,15 0 0 1 10,15 v170 a10,15 0 0 1 -10,15 a10,15 0 0 1 -10,-15Z" style="stroke:black;fill:white;cursor:pointer;"  />
+                <rect x="197" y="200" width="5" height="30" rx="5" fill="red"/>
+            </g>
+
+            
+            <circle cx="50" cy="520" r="20" fill="var(--bg)" stroke="black"/>
+            <circle cx="50" cy="520" r="15" fill="black" style="border:2px"/>
+            <text x="20" y="570" fill="black" font-size="28px" style="font-weight:700">V/Ω</text>
+            <circle cx="150" cy="520" r="20" fill="var(--bg)" stroke="black"/>
+            <circle cx="150" cy="520" r="15" fill="black" style="border:2px"/>
+            <text x="120" y="570" fill="black" font-size="28px" style="font-weight:700">COM</text>
+            <circle cx="250" cy="520" r="20" fill="var(--bg)" stroke="black"/>
+            <circle cx="250" cy="520" r="15" fill="black" style="border:2px"/>
+            <text x="220" y="570" fill="blue" font-size="28px" style="font-weight:700">mA</text>
+            <circle cx="350" cy="520" r="20" fill="var(--bg)" stroke="black"/>
+            <circle cx="350" cy="520" r="15" fill="black" style="border:2px"/>
+            <text x="320" y="570" fill="red" font-size="28px" style="font-weight:700">10A</text>
+            <text x="500" y="20"></text>
+            Sorry, your browser does not support inline SVG.
+
+            </g>
+            <image id="warning" x="800" y="300" href="svg/danger.svg" style="display:none"/>
+            <image id="img" x="0" y="200"  href="x"/>
+            <!--<line id="line1" stroke="#ff0000" stroke-width="2.5" fill="none" x1="500" y1="500" x2="600" y2="600" />-->
+             
+            <g id="a" style="display:none">
+                <text x="40" y="100" id="a-text" style="font-size:20px;"></text>
+                <!--COM-->
+                <path d="M476,590 c20,-20 370,-20 625,27" stroke="black" stroke-width="5" fill="none"/>
+                <ellipse id="e1" cx="1140" cy="620" rx="40" ry="20" stroke="black" fill="black"></ellipse>
+                <circle cx="1140" cy="620" r="15" stroke="white" fill="black" stroke-width="2"/>
+
+                <!--mA-->
+                <path d="M563,390 c20,-20 370,-20 642,220" stroke="#ff0000" stroke-width="3" fill="none"/>
+                <ellipse id="e1" cx="1240" cy="620" rx="40" ry="20" stroke="black" fill="#ff0000"></ellipse>
+                <circle cx="1240" cy="620" r="15" stroke="black" fill="#ff0000" stroke-width="2"/>
+
+                <rect x="502" y="405" width="50" height="30" stroke="none" fill="transparent" onclick="change()" style="cursor:pointer"/>
+
+
+            </g>
+            <g id="buttons" style="display:none">
+                <image x="40" y="100" href="svg/selector.svg"/>
+                <rect x="50" y="135" width="98" height="40" fill="transparent" style="cursor:pointer" onclick="button1()"/>
+
+                <rect x="50" y="197" width="98" height="40" fill="transparent" style="cursor:pointer" onclick="button2()"/>
+            </g>
+
+            <g id="a20" style="display:none">
+                <!--Zona pulsanti-->
+                
+                <text x="40" y="100" id="a20-text" style="font-size:20px;"></text>
+
+
+                <!--COM-->
+                <path d="M476,590 c20,-20 370,-20 625,27" stroke="black" stroke-width="5" fill="none"/>
+                <ellipse id="e1" cx="1140" cy="620" rx="40" ry="20" stroke="black" fill="black"></ellipse>
+                <circle cx="1140" cy="620" r="15" stroke="white" fill="black" stroke-width="2"/>
+
+                <!--mA-->
+                <path d="M563,390 c20,-20 370,-20 742,220" stroke="#ff0000" stroke-width="3" fill="none"/>
+                <ellipse id="e1" cx="1340" cy="620" rx="40" ry="20" stroke="black" fill="#ff0000"></ellipse>
+                <circle cx="1340" cy="620" r="15" stroke="black" fill="#ff0000" stroke-width="2"/>
+
+                <rect x="502" y="405" width="50" height="30" stroke="none" fill="transparent" onclick="change()" style="cursor:pointer"/>
+            </g>
+
+            <g id="dc" style="display:none">
+                <!--COM-->
+                <path d="M316,592 c20,-20 420,200 795,27" stroke="black" stroke-width="5" fill="none"/>
+                <ellipse id="e1" cx="1140" cy="620" rx="40" ry="20" stroke="black" fill="black"></ellipse>
+                <circle cx="1140" cy="620" r="15" stroke="white" fill="black" stroke-width="2"/>
+
+                <!--v/Omega-->
+                <path d="M476,590 c20,-20 370,-20 525,27" stroke="#ff0000" stroke-width="3" fill="none"/>
+                <ellipse id="e1" cx="1040" cy="620" rx="40" ry="20" stroke="black" fill="#ff0000"></ellipse>
+                <circle cx="1040" cy="620" r="15" stroke="black" fill="#ff0000" stroke-width="2"/>
+
+                <text x="40" y="100" id="dc-text" style="font-size:20px;"></text>
+            </g>
+
+            <g id="ac1" style="display:none">
+                <path d="M270,520 c20,-5 420,200 750,100" stroke="yellow" stroke-width="5" fill="none"/>
+                <ellipse id="e1" cx="1040" cy="620" rx="40" ry="20" stroke="black" fill="yellow"></ellipse>
+                <circle cx="1040" cy="620" r="10" stroke="black" fill="black" stroke-width="2"/>
+
+                <path d="M220,520 c20,20 420,400 900,100" stroke="yellow" stroke-width="5" fill="none"/>
+                <ellipse id="e1" cx="1140" cy="620" rx="40" ry="20" stroke="black" fill="yellow"></ellipse>
+                <circle cx="1140" cy="620" r="10" stroke="black" fill="black" stroke-width="2"/>
+
+                <text x="60" y="100" style="font-size:20px;"><tspan>With this range, we can measure up to 600V.</tspan><tspan dy="30" x="60">It's dangerous: let the professor measure!</tspan></text>
+            </g>
+
+            <g id="ohm" style="display:none">
+                <path d="M530,452 c20,-55 420,200 470,170" stroke="red" stroke-width="5" fill="none"/>
+                <ellipse id="e1" cx="1040" cy="620" rx="40" ry="20" stroke="black" fill="red"></ellipse>
+                <circle cx="1040" cy="620" r="10" stroke="black" fill="black" stroke-width="2"/>
+
+                <path d="M302,460 c20,20 420,400 800,160" stroke="black" stroke-width="5" fill="none"/>
+                <ellipse id="e1" cx="1140" cy="620" rx="40" ry="20" stroke="black" fill="black"></ellipse>
+                <circle cx="1140" cy="620" r="10" stroke="white" fill="black" stroke-width="2"/>
+
+                <text x="40" y="100" style="font-size:20px;" id="ohm-text"></text>
+            </g>
+
+
+                
+            <text x="1050" y="740" style="font-size:20px" id="type"></text>
+            <text x="1030" y="90" style="font-size:20px;" id="mu"></text>
+         </svg> 
+
+        <!--<div class="desc" id="desc"></div>-->
+        
+        
+        </div>
+    </body>
+    <script src="volt.js" type="text/javascript"></script>
+    <script>
+        window.onload = init;
+        function init(){
+            document.getElementById("selector").onmousemove = mouseMove;
+            document.getElementById("l").onmousemove = mouseMove;
+        }
+        var set = false;
+        var x1, x2, y1, y2, angle;
+        function getCursorXY(e){
+            /*if(!set){
+                x1 = e.pageX;
+                y1 = e.pageY; basic: 200 400
+                set = true;
+            }
+            clearTimeout(thread);
+            thread = setTimeout(callback.bind(this, e), 100);*/
+            
+            //console.log("Angolo " + Math.atan2(e.pageY, e.pageX)*180/(Math.PI));
+            //console.log(e.pageX, e.pageY);
+            //angle = Math.atan2(400-e.pageY, 200-e.pageX) * 180/Math.PI;
+        }
+
+        /*function getAngle (x1, y1, x2, y2) {
+            var distY = Math.abs(y2-y1); //opposite
+            var distX = Math.abs(x2-x1); //adjacent
+            var dist = Math.sqrt((distY*distY)+(distX*distX)); //hypotenuse, 
+               //don't know if there is a built in JS function to do the square of a number
+            var val = distY/dist;
+             aSine = Math.asin(val)*(180/Math.PI);
+            return aSine; //return angle in degrees
+        }
+
+        function callback(e) {
+            x2 = e.pageX; //new X
+            y2 = e.pageY; //new Y
+
+            console.log("ANGLE: " + getAngle(x1, y1, x2, y2));
+            console.log("mouse has stopped");   
+            set = false;
+        }*/
+
+        /*function selector(e){
+            
+            var l = document.getElementById("l");
+            //l.setAttribute("transform", "rotate("+ 90 - angle +",200,300)");
+        }*/
+
+        /*window.onmousedown = mouseDown;
+        window.onmouseup = mouseUp;
+        var drag;
+
+        function mouseMove(e){
+            if(drag){
+                var l = document.getElementById("l");
+                var mouseX = e.pageX;
+                var mouseY = e.pageY;
+                var radians = Math.atan2((400 + Number(document.getElementById("svg").style.marginTop[0] + document.getElementById("svg").style.marginTop[1]))-mouseY, (200 + Number(document.getElementById("svg").style.marginLeft[0] + document.getElementById("svg").style.marginLeft[1]))-mouseX);
+                var degree = (radians * 180/Math.PI * 1) - 90;
+                console.log(degree);
+                //if(Math.abs(Math.round(degree))>=10)
+                l.setAttribute('transform', 'rotate(' + degree + ', 200, 300)');
+            }
+        }
+
+        function mouseDown(e){
+            drag = true;
+        }
+
+        function mouseUp(e){
+            drag = false;
+
+        }*/
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--<script>
+        $(document).keydown(function(event){
+    if(event.keyCode==123){
+        return false;
+    }
+    else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
+             return false;
+    }
+});
+
+$(document).on("contextmenu",function(e){        
+   e.preventDefault();
+});
+    </script>-->
+</html>
